@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>scray</groupId>
+  <artifactId>cassandra-hadoop-vnodes</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <inceptionYear>2014</inceptionYear>
+  <packaging>pom</packaging>
+  <name>Cassandra-Hadoop-Vnodes - Parent</name>
+  <description>Cassandra-InputFormat for use with vnodes</description>
+
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <encoding>UTF-8</encoding>
+    <scala.tools.version>2.10</scala.tools.version>
+    <scala.version>2.10.4</scala.version>
+  </properties>
+
+  <modules>
+    <module>cassandra-hadoop-vnodes-core</module>
+    <module>cassandra-hadoop-vnodes-examples</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scalaz</groupId>
+      <artifactId>scalaz-core_2.10</artifactId>
+      <version>7.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_2.10</artifactId>
+      <version>2.2.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.twitter</groupId>
+        <artifactId>util_2.10</artifactId>
+        <version>6.17.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <scalaVersion>${scala.version}</scalaVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <repositories>
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+    <repository>
+      <id>conjars.org</id>
+      <name>Conjars Repository</name>
+      <url>http://conjars.org/repo</url>
+    </repository>
+    <repository>
+      <id>twttr.com</id>
+      <name>Twitter Maven</name>
+      <url>http://maven.twttr.com</url>
+    </repository>
+    <repository>
+      <id>typesafe.com</id>
+      <name>Typesafe Repository</name>
+      <url>http://repo.typesafe.com/typesafe/releases/</url>
+    </repository>
+    <repository>
+      <id>websudos.co.uk</id>
+      <name>Websudos Repository</name>
+      <url>http://maven.websudos.co.uk/ext-release-local</url>
+    </repository>
+    <repository>
+      <id>sonatype.org</id>
+      <name>Sonatype Repo</name>
+      <url>https://repository.sonatype.org/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+</project>
