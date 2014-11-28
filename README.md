@@ -14,18 +14,18 @@ For these reasons I started a new Cassandra-InputFormat/RecordReader.
 Requirements
 ------------
 Install or use a cluster with V-Nnodes, that is compatible with native protocol version
-4, i.e. Cassandra 2.1+. It runs on 2.0+, but will display protocol version
+3, i.e. Cassandra 2.1+. It runs on 2.0+, but will display protocol version
 downgrade messages.
 
 To write your Hadoop job using Cassandra and this InputFormat please include 
 cassandra-hadoop-vnodes-core as a dependency:
-'''
+```
 <dependency>
   <groupId>scray</groupId>
   <artifactId>cassandra-hadoop-vnodes-core</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 </dependency>
-'''
+```
 
 As long as my pull request has not been accepted by datastax, you'll also need to clone
 and build https://github.com/AndreasPetter/driver-core
@@ -97,8 +97,9 @@ run with any Cascading job. There are add-ons which in turn allow this stuff to 
 used in Scalding (as a Mappable) or in Summingbird (as a Source). Summingburd also
 provides means to organize versions.
 
-Set to ```"scray.cassandra.storehaus.CassandraVNodeSplittingMechanism"``` in your
-JobConf. This is working with the classic mapred-MapReduce API.
+Set ```com.twitter.storehaus.cascading.splitting.mechanism.class``` to
+```scray.cassandra.storehaus.CassandraVNodeSplittingMechanism``` in your JobConf. This is
+working with the classic mapred-MapReduce API.
 
 Altough being part of this project the storehaus-module is not being integrated into
 the standard build because it has so many additinal dependencies you might not need
